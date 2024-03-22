@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<div class="container my-4">
+    <h1 class="my-4">Shopping Cart</h1>
+    <hr>
+    <table class="table">
+
+        <tbody>
+            <tr *ngFor="let d of cartItems; index as i">
+                <td class="my-4"><img src="{{d.image}}" width="70" height="50"></td>
+                <td><h3 style="font-weight: bolder;">{{d.name}} 
+                    <!-- <h5>Toppings: ({{d.topping[0]}}, {{d.topping[1]}}, {{d.topping[2]}})</h5> -->
+                </h3></td>
+                <td>
+                    <h6
+                    style="margin: 5px 20px; padding: 3px 5px; background-color: #f7f7f7; border-radius: 20%; font-weight: bold; width: 25%;">
+                    ${{d.price}}</h6>
+                </td>
+                <td>
+                    <input class="input-group" type="number" [(ngModel)]="itemsArr[i]" placeholder="1">
+                </td>
+                <td><button class="btn btn-dark" (click)="delProd(d.id)">Delete</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    
+
+    <div style="display: flex; margin-left: 500px;">
+        <!-- <button class="btn btn-dark" (click)="func()">Submit</button> -->
+        <!-- <h3 style="margin-left: 50px;">$132.44</h3> -->
+        <a routerLink="/checkout">
+            <button class="btn btn-dark" (click)="itemsArrAll()">Checkout ></button>
+        </a>
+    </div>
+</div>
+
+

@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+<div class="container">
+    <h1 class="my-4">Menu</h1>
+    <div class="container row">
+        <div class="card col-sm-3" style="width: 18rem; margin: 0 38px; margin-bottom: 20px;"
+            *ngFor="let items of menuItems; index as i">
+            <img src={{items.image}} class="card-img-top" width="200" height="210">
+            <div style="text-align: center;" class="card-body">
+                <h5 class="card-title" >{{items.name}}</h5>
+                <div style="display: flex; margin-left: 10px;">
+                    <a routerLink="/menu"><button class="btn btn-dark" (click)="guiderFunction(i, items.id)">Add to Cart</button> </a> 
+                    <h6
+                        style="margin: 5px 20px; padding: 3px 5px; background-color: #f7f7f7; border-radius: 20%; font-weight: bold;">
+                        ${{items.price}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
